@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AiDigital 數位學伴教學站｜單檔入口版</title>
+    <style>
+      :root {
+        --aqua: #2b8a99;
+        --aqua-deep: #143a43;
+        --aqua-soft: #e2f7fa;
+        --paper: #fbfeff;
+        --line: rgba(43, 138, 153, 0.18);
+        --warm: #fff3d8;
+        --shadow: 0 22px 50px rgba(20, 58, 67, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--aqua-deep);
+        font-family: "BiauKai", "DFKai-SB", "Noto Sans TC", sans-serif;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(89, 184, 196, 0.26), transparent 24rem),
+          radial-gradient(circle at 82% 18%, rgba(255, 225, 151, 0.24), transparent 22rem),
+          linear-gradient(135deg, #f9feff, #edf9fb 55%, #fefcf4);
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 34px 0 54px;
+      }
+
+      .hero,
+      .section,
+      .notice {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        display: grid;
+        gap: 18px;
+        padding: clamp(26px, 5vw, 52px);
+        overflow: hidden;
+      }
+
+      .badge {
+        display: inline-flex;
+        width: fit-content;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: var(--aqua-soft);
+        color: var(--aqua);
+        font-weight: 900;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(38px, 8vw, 76px);
+        line-height: 1.02;
+        letter-spacing: 0.02em;
+      }
+
+      .hero p,
+      .notice p {
+        max-width: 760px;
+        margin: 0;
+        color: rgba(20, 58, 67, 0.72);
+        font-size: clamp(18px, 2.5vw, 22px);
+        font-weight: 800;
+        line-height: 1.7;
+      }
+
+      .notice {
+        margin-top: 18px;
+        padding: 22px;
+        background: linear-gradient(135deg, rgba(255, 243, 216, 0.92), rgba(255, 255, 255, 0.86));
+      }
+
+      .section {
+        margin-top: 22px;
+        padding: clamp(18px, 3vw, 28px);
+      }
+
+      .section h2 {
+        margin: 0 0 16px;
+        font-size: clamp(26px, 4vw, 38px);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        display: grid;
+        min-height: 138px;
+        gap: 10px;
+        padding: 18px;
+        color: inherit;
+        text-decoration: none;
+        border: 2px solid rgba(43, 138, 153, 0.12);
+        border-radius: 22px;
+        background:
+          radial-gradient(circle at 18% 14%, rgba(89, 184, 196, 0.14), transparent 7rem),
+          rgba(255, 255, 255, 0.9);
+        transition:
+          transform 160ms ease,
+          border-color 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(43, 138, 153, 0.42);
+        box-shadow: 0 18px 32px rgba(20, 58, 67, 0.12);
+      }
+
+      .card strong {
+        font-size: 24px;
+      }
+
+      .card span {
+        color: rgba(20, 58, 67, 0.68);
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.5;
+      }
+
+      .footer {
+        padding: 28px 0 0;
+        color: rgba(20, 58, 67, 0.62);
+        font-weight: 800;
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .shell {
+          width: min(100% - 20px, 1120px);
+          padding-top: 16px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <span class="badge">AiDigital 數位學伴</span>
+        <h1>仁和國小互動教學站</h1>
+        <p>
+          這是單檔 HTML 入口版，適合只能上傳 HTML 的情況。若要使用完整遊戲互動、即時後台與 SQLite 紀錄，仍需要上傳完整資料夾版本。
+        </p>
+      </section>
+
+      <section class="notice">
+        <p>
+          如果這個檔案旁邊有完整網站資料夾，點下方卡片可進入各活動；如果只上傳這一個 HTML，則它會作為課程入口展示頁使用。
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>數學教學</h2>
+        <div class="grid">
+          <a class="card" href="./decimal-intro.html"><strong>認識小數</strong><span>中文讀法拼小數、學生端作答、老師端即時後台。</span></a>
+          <a class="card" href="./decimal-game.html"><strong>小數加減</strong><span>位值表、直式計算與進位演示。</span></a>
+          <a class="card" href="./money-game.html"><strong>金錢挑戰</strong><span>用真實面額概念練習湊錢與理財應用題。</span></a>
+          <a class="card" href="./division-game.html"><strong>平均分配</strong><span>乘除關係、餘數與分物概念。</span></a>
+          <a class="card" href="./time-game.html"><strong>時間時鐘</strong><span>可操作時鐘與時間計算。</span></a>
+          <a class="card" href="./fraction-game.html"><strong>同母分數</strong><span>同分母加減與披薩圖像操作。</span></a>
+          <a class="card" href="./area-grid-game.html"><strong>面積數格</strong><span>整格、半格與自訂圖形。</span></a>
+          <a class="card" href="./sudoku-game.html"><strong>數獨挑戰</strong><span>可調難度的拖動數獨活動。</span></a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>英文教學</h2>
+        <div class="grid">
+          <a class="card" href="./phonics-game.html"><strong>母音練習</strong><span>長母音、短母音與自由拼音。</span></a>
+          <a class="card" href="./color-mix.html"><strong>顏色遊戲</strong><span>英文顏色辨識與混色活動。</span></a>
+          <a class="card" href="./this-that-game.html"><strong>這那問答</strong><span>this / that 與 Yes / No 問答活動。</span></a>
+          <a class="card" href="./can-do-game.html"><strong>可不可以</strong><span>Can you...? 與開放式回答練習。</span></a>
+          <a class="card" href="./sports-game.html"><strong>圖卡配對</strong><span>運動、動作、顏色、物品等單字配對。</span></a>
+          <a class="card" href="./word-guess-game.html"><strong>單字猜猜</strong><span>老師輸入單字，學生猜字母。</span></a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>活動遊戲</h2>
+        <div class="grid">
+          <a class="card" href="./date-finance-game.html"><strong>理財富翁</strong><span>職業、夢想、收入與支出的理財桌遊。</span></a>
+          <a class="card" href="./random-picker.html"><strong>隨機挑人</strong><span>輪盤、卡片、星球與燈光抽選。</span></a>
+          <a class="card" href="./gratitude-cards.html"><strong>感謝卡片</strong><span>四位學生可製作與儲存感謝卡。</span></a>
+          <a class="card" href="./students.html"><strong>學生資料</strong><span>學生需求分析與課堂狀態紀錄。</span></a>
+        </div>
+      </section>
+
+      <p class="footer">AiDigital 數位學伴教學站</p>
+    </main>
+  </body>
+</html>
